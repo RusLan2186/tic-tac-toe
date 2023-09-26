@@ -6,6 +6,10 @@ import { calculateWinner } from './helper';
 const Game = () => {
   const [board, setBoard] = useState(Array(9).fill(null));
   const [xIsNext, setXIsNext] = useState(true);
+  const [deadHead, setDeadHead] = useState(null);
+  const [winnerX, setWinnerX] = useState(0);
+  const [winnerO, setWinner0] = useState(0);
+  const [deadHeadQuantity, setDeadHeadQuantity] = useState(0);
   const winner = calculateWinner(board);
   const handleClick = (index) => {
     const boardCopy = [...board];
