@@ -45,7 +45,7 @@ body {
 // GAME
 
 .game__wrapper {
-   min-height: 100vh;
+   min-height: 82vh;
    display: flex;
    justify-content: flex-start;
    column-gap: 100px;
@@ -73,7 +73,7 @@ body {
    cursor: pointer;
    box-sizing: border-box;
    transition: 0.3s all ease 0s;
-   font-size: 110px;
+   font-size: 130px;
    &:hover {
       background-color: rgba(70, 177, 106, 0.671);
       transition: 0.3s all ease 0s;
@@ -112,13 +112,19 @@ body {
    text-align: center;
    color: white;
    font-size: 26px;
-   background-color: rgba(219, 230, 230, 0.822);
+   background-color: rgba(70, 177, 106, 0.671);
    padding: 20px;
    border-radius: 15px;
 }
 .score__result {
    margin-top: 15px;
    font-size: 35px;
+}
+
+.modal__info {
+   font-size: 50px;
+   color: white;
+   text-transform: uppercase;
 }
 
 @-webkit-keyframes shake-horizontal {

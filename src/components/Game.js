@@ -2,6 +2,7 @@ import React from 'react';
 import { useState, useEffect } from 'react';
 import Board from './Board';
 import { calculateWinner } from './helper';
+import MyModal from './Modal/MyModal';
 
 const Game = () => {
   const [board, setBoard] = useState(Array(9).fill(null));
@@ -10,6 +11,7 @@ const Game = () => {
   const [winnerX, setWinnerX] = useState(0);
   const [winnerO, setWinner0] = useState(0);
   const [deadHeadQuantity, setDeadHeadQuantity] = useState(0);
+  const [isModal, setIsModal] = useState(false);
   const winner = calculateWinner(board);
   const handleClick = (index) => {
     const boardCopy = [...board];
@@ -35,6 +37,12 @@ const Game = () => {
     setWinner0(0);
     setDeadHeadQuantity(0);
   };
+
+  useEffect(() => {
+    if (winner) {
+      setIsModal(true);
+    }
+  }, [winner]);
 
   useEffect(() => {
     if (board.includes(null) || winner) {
@@ -88,6 +96,11 @@ const Game = () => {
           </div>
         </div>
       </div>
+      <MyModal visible={isModal} changeVisible={setIsModal}>
+        <div className='modal__info'>
+          {winner ? 'Winner:' + ' ' + winner : 'is walking now ' + (xIsNext ? 'X' : '0')}
+        </div>
+      </MyModal>
     </div>
   );
 };

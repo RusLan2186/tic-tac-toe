@@ -1,0 +1,65 @@
+@use "sass:math";
+
+.myModal {
+   position: fixed;
+   top: 0;
+   left: 0;
+   right: 0;
+   bottom: 0;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   opacity: 0;
+   transition: 0.4s all;
+   background: rgba(63, 59, 59, 0.8);
+   pointer-events: none;
+   z-index: 110;
+}
+
+.myModal.active {
+   opacity: 1;
+   pointer-events: all;
+}
+
+.myModalContent {
+   margin: 0 15px;
+   padding: 25px;
+
+   border-radius: 16px;
+   min-width: 250px;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   // transform: scale(0.5);
+   transform: translateY(-500px);
+   transition: 0.4s;
+   position: relative;
+   border: 3px solid rgba(70, 177, 106, 0.671);
+   z-index: 110;
+   &.active {
+      // transform: scale(1);
+      transform: translateY(0px);
+   }
+}
+
+.close {
+   text-decoration: line-through;
+   color: rgba(70, 177, 106, 0.493);
+   opacity: 0.8;
+}
+.modalError {
+   color: rgba(70, 177, 106, 0.671);
+   position: absolute;
+   top: -50px;
+   right: -10px;
+   font-size: 35px;
+   cursor: pointer;
+   transition: 0.3s all ease 0s;
+   z-index: 100;
+   width: 50px;
+   text-align: center;
+   &:hover {
+      color: rgba(70, 177, 106, 0.671);
+      transition: 0.3s all ease 0s;
+   }
+}
