@@ -6,6 +6,7 @@ function App() {
     <div className='wrapper'>
       <h1 className='title'> Tic-Tac-Toe</h1>
       <Game />
+      <footer className='footer'>© 2023. Ruslan Anatolevich</footer>
     </div>
   );
 }

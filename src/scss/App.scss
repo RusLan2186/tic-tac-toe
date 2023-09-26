@@ -45,7 +45,7 @@ body {
 // GAME
 
 .game__wrapper {
-   min-height: 82vh;
+   min-height: 78vh;
    display: flex;
    justify-content: flex-start;
    column-gap: 100px;
@@ -136,6 +136,13 @@ body {
    color: rgb(27, 131, 41);
 }
 
+.footer {
+   text-align: center;
+   padding-bottom: 20px;
+   color: rgb(27, 131, 41);
+   font-size: 25px;
+}
+
 @-webkit-keyframes shake-horizontal {
    0%,
    100% {
@@ -164,6 +171,7 @@ body {
       transform: translateX(-8px);
    }
 }
+
 @keyframes shake-horizontal {
    0%,
    100% {
