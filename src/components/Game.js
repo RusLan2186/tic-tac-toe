@@ -20,9 +20,17 @@ const Game = () => {
     setBoard(boardCopy);
     setXIsNext(!xIsNext);
   };
+  const startNewGame = () => {
+    return (
+      <button className='btn' onClick={() => setBoard(Array(9).fill(null))}>
+        New Game
+      </button>
+    );
+  };
 
   return (
     <div className='game__wrapper'>
+      {startNewGame()}
       <Board squares={board} click={handleClick} />
     </div>
   );
