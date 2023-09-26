@@ -97,7 +97,7 @@ const Game = () => {
           </div>
         </div>
       </div>
-      <MyModal visible={isModal} changeVisible={setIsModal}>
+      <MyModal visible={isModal} changeVisible={setIsModal} changeBoard={setBoard}>
         <div className='modal__info'>
           {deadHead ? (
             <div>
