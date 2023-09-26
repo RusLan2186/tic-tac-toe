@@ -40,10 +40,10 @@ const Game = () => {
   };
 
   useEffect(() => {
-    if (winner) {
+    if (winner || deadHead) {
       setIsModal(true);
     }
-  }, [winner]);
+  }, [winner, deadHead]);
 
   useEffect(() => {
     if (board.includes(null) || winner) {
@@ -99,8 +99,16 @@ const Game = () => {
       </div>
       <MyModal visible={isModal} changeVisible={setIsModal}>
         <div className='modal__info'>
-          {winner ? 'Winner:' + ' ' + winner : 'is walking now ' + (xIsNext ? 'X' : '0')}
-          <img src={gif} alt='' />
+          {deadHead ? (
+            <div>
+              <h2>dead heat</h2>
+            </div>
+          ) : (
+            <div className='modal__info'>
+              {winner ? 'Winner:' + ' ' + winner : 'is walking now ' + (xIsNext ? 'X' : '0')}
+              <img src={gif} alt='' />
+            </div>
+          )}
         </div>
       </MyModal>
     </div>

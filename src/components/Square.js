@@ -1,10 +1,12 @@
 import React from 'react';
 
 const Square = ({ value, click }) => {
+  console.log(value);
+
   return (
     <div>
       <button className='square' onClick={click}>
-        <span>{value}</span>
+        <span className={value === 'X' ? 'color_x' : ''}>{value}</span>
       </button>
     </div>
   );
