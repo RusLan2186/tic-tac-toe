@@ -3,7 +3,7 @@ import Board from './Board';
 
 const Game = () => {
   return (
-    <div>
+    <div className='game__wrapper'>
       <Board />
     </div>
   );

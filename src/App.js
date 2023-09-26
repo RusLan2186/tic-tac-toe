@@ -3,8 +3,8 @@ import './scss/App.scss';
 
 function App() {
   return (
-    <div>
-      <h1> Tic-Tac-Toe</h1>
+    <div className='wrapper'>
+      <h1 className='title'> Tic-Tac-Toe</h1>
       <Game />
     </div>
   );
