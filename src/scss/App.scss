@@ -32,7 +32,7 @@ body {
    color: white;
    border: 3px solid green;
    border-radius: 15px;
-   width: 15%;
+   width: 100%;
    transition: 0.3s all ease 0s;
    &:hover {
       background-color: green;
@@ -44,19 +44,18 @@ body {
 .game__wrapper {
    min-height: 100vh;
    display: flex;
-   flex-direction: column;
-   padding: 0 20px;
+   justify-content: flex-start;
+   column-gap: 100px;
+   padding-left: 50px;
 }
 
 // BOARD
 .board {
    display: flex;
    flex-wrap: wrap;
-   // overflow: hidden;
    justify-content: center;
    width: 900px;
    height: 600px;
-
    margin: 0 auto;
 }
 
@@ -76,4 +75,34 @@ body {
       background-color: rgba(70, 177, 106, 0.671);
       transition: 0.3s all ease 0s;
    }
+}
+
+.dead__head,
+.game__info {
+   font-size: 30px;
+   color: white;
+}
+
+.score {
+   width: 20%;
+}
+
+.score__title {
+   font-size: 50px;
+   color: white;
+   text-transform: uppercase;
+   margin-bottom: 30px;
+   text-align: center;
+}
+
+.score__info {
+   display: flex;
+   justify-content: space-between;
+   text-align: center;
+   color: white;
+   font-size: 26px;
+}
+.score__result {
+   margin-top: 15px;
+   font-size: 35px;
 }

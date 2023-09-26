@@ -53,18 +53,22 @@ const Game = () => {
 
   return (
     <div className='game__wrapper'>
-      {startNewGame()}
-      <Board squares={board} click={handleClick} />
-      {deadHead ? (
-        <h2 className='dead__head'>dead heat</h2>
-      ) : (
-        <div className='game__info'>
-          {winner ? 'Winner' + ' ' + winner : 'is walking now ' + (xIsNext ? 'X' : '0')}
-          <p> Winner X {winnerX}</p>
-          <p> Winner 0{winnerO}</p>
-          <p>DeadHead{deadHeadQuantity}</p>
-        </div>
-      )}
+      <div>
+        {startNewGame()}
+        {deadHead ? (
+          <h2 className='dead__head'>dead heat</h2>
+        ) : (
+          <div className='game__info'>
+            {winner ? 'Winner' + ' ' + winner : 'is walking now ' + (xIsNext ? 'X' : '0')}
+            <p> Winner X {winnerX}</p>
+            <p> Winner 0{winnerO}</p>
+            <p>DeadHead{deadHeadQuantity}</p>
+          </div>
+        )}
+      </div>
+      <div>
+        <Board squares={board} click={handleClick} />
+      </div>
     </div>
   );
 };
