@@ -30,6 +30,11 @@ const Game = () => {
       </button>
     );
   };
+  const resetResults = () => {
+    setWinnerX(0);
+    setWinner0(0);
+    setDeadHeadQuantity(0);
+  };
 
   useEffect(() => {
     if (board.includes(null) || winner) {
@@ -55,19 +60,33 @@ const Game = () => {
     <div className='game__wrapper'>
       <div>
         {startNewGame()}
+        <button className='btn' onClick={resetResults}>
+          Reset Results
+        </button>
         {deadHead ? (
           <h2 className='dead__head'>dead heat</h2>
         ) : (
           <div className='game__info'>
             {winner ? 'Winner' + ' ' + winner : 'is walking now ' + (xIsNext ? 'X' : '0')}
-            <p> Winner X {winnerX}</p>
-            <p> Winner 0{winnerO}</p>
-            <p>DeadHead{deadHeadQuantity}</p>
           </div>
         )}
       </div>
       <div>
         <Board squares={board} click={handleClick} />
+      </div>
+      <div className='score'>
+        <h2 className='score__title'>game score</h2>
+        <div className='score__info'>
+          <div>
+            Winner X <p className='score__result'>{winnerX}</p>
+          </div>
+          <div>
+            Winner 0<p className='score__result'>{winnerO}</p>
+          </div>
+          <div>
+            DeadHead<p className='score__result'>{deadHeadQuantity}</p>
+          </div>
+        </div>
       </div>
     </div>
   );
