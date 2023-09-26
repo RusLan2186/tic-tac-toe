@@ -3,6 +3,7 @@ import { useState, useEffect } from 'react';
 import Board from './Board';
 import { calculateWinner } from './helper';
 import MyModal from './Modal/MyModal';
+import gif from '../bg/1.gif';
 
 const Game = () => {
   const [board, setBoard] = useState(Array(9).fill(null));
@@ -99,6 +100,7 @@ const Game = () => {
       <MyModal visible={isModal} changeVisible={setIsModal}>
         <div className='modal__info'>
           {winner ? 'Winner:' + ' ' + winner : 'is walking now ' + (xIsNext ? 'X' : '0')}
+          <img src={gif} alt='' />
         </div>
       </MyModal>
     </div>

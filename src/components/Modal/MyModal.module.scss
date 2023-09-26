@@ -23,21 +23,18 @@
 
 .myModalContent {
    margin: 0 15px;
-   padding: 25px;
-
+   padding: 25px 100px;
    border-radius: 16px;
    min-width: 250px;
    display: flex;
    justify-content: center;
    align-items: center;
-   // transform: scale(0.5);
    transform: translateY(-500px);
    transition: 0.4s;
    position: relative;
    border: 3px solid rgba(70, 177, 106, 0.671);
    z-index: 110;
    &.active {
-      // transform: scale(1);
       transform: translateY(0px);
    }
 }
