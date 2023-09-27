@@ -73,8 +73,10 @@ body {
    column-gap: 30px;
    padding: 0 30px;
    @media (max-width: 1199.98px) {
-      display: block;
-      padding: 0;
+      // display: block;
+      // padding: 0;
+      display: grid;
+      grid-template-columns: auto;
    }
 }
 .board__container {
