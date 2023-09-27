@@ -67,20 +67,22 @@ const Game = () => {
 
   return (
     <div className='game__wrapper'>
-      <div>
-        {startNewGame()}
-        <button className='btn' onClick={resetResults}>
-          Reset Results
-        </button>
+      <div className='game__menu'>
+        <div className='buttons'>
+          {startNewGame()}
+          <button className='btn' onClick={resetResults}>
+            Reset Results
+          </button>
+        </div>
         {deadHead ? (
           <h2 className='dead__head'>dead heat</h2>
         ) : (
           <div className='game__info'>
-            {winner ? 'Winner' + ' ' + winner : 'is walking now ' + (xIsNext ? 'X' : '0')}
+            {winner ? 'Winner' + ' ' + winner : 'is walking now ' + (xIsNext ? '" X "' : '" 0 "')}
           </div>
         )}
       </div>
-      <div>
+      <div className='board__container'>
         <Board squares={board} click={handleClick} />
       </div>
       <div className='score'>
@@ -93,7 +95,7 @@ const Game = () => {
             Winner 0<p className='score__result'>{winnerO}</p>
           </div>
           <div>
-            DeadHead<p className='score__result'>{deadHeadQuantity}</p>
+            Drow<p className='score__result'>{deadHeadQuantity}</p>
           </div>
         </div>
       </div>
@@ -101,11 +103,13 @@ const Game = () => {
         <div className='modal__info'>
           {deadHead ? (
             <div>
-              <h2>dead heat</h2>
+              <h2>drow</h2>
             </div>
           ) : (
             <div className='modal__info'>
-              {winner ? 'Winner:' + ' ' + winner : 'is walking now ' + (xIsNext ? 'X' : '0')}
+              {winner
+                ? 'Winner:' + ' ' + winner
+                : 'is walking now ' + (xIsNext ? '" X "' : '" 0 "')}
               <img src={gif} alt='' />
             </div>
           )}
